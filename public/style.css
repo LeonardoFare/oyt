@@ -1,0 +1,86 @@
+body{
+
+background:black;
+color:white;
+/* display:grid;
+grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+grid-template-columns:1fr; */
+text-align:center;
+
+}
+#shape{
+    /* display:flex;
+justify-content:space-between;
+     */
+     display:flex;
+     justify-content:space-between;
+    width:100%;
+    height:10%;
+}
+#shape2{
+    /* margin-left:0px;
+    margin-right:90px; */
+  
+  background-color:red;
+width:10%;
+height:100%;
+border-radius:50%;
+animation-name:sh;
+animation-duration:2s;
+animation-iteration-count:infinite;
+}
+@keyframes sh{
+    0%{
+        border-radius:50%;
+        background-color:black;
+    }
+    50%{
+        border-radius:50%;
+        background-color:red;
+
+    }
+    100%{
+        border-radius: 50%;
+        background-color:black;
+
+    }
+
+}
+
+#shape1{
+    /* margin-left:90%;   */
+    background-color:red;
+  width:10%;
+  height:100%;
+border-radius:50%;
+animation-name:twinkle;
+animation-duration:2s;
+animation-iteration-count:infinite;
+
+}
+@keyframes twinkle{
+    0%{
+        border-radius:50%;
+        background-color:red;
+    }
+    50%{
+        border-radius:100%;
+        background-color:black;
+
+    }
+    100%{
+        border-radius: 50%;
+        background-color:red;
+
+    }
+}
+a{
+    color:red;
+    pointer-events:stroke;
+    text-align:center;
+
+
+}
+p{
+    text-align:center;
+}
