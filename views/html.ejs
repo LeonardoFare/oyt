@@ -1,0 +1,114 @@
+<head>
+    <title>
+        Time space microserver
+    </title>
+<link rel="stylesheet" href="style.css" teyp="text/css" >
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<!-- <div id="output"></div>
+<!-- Load Babel -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- Your custom script here -->
+<!-- <script type="text/babel">
+  const getMessage = () => "Hello World";
+  document.getElementById("output").innerHTML = getMessage(); -->
+</script> -->
+
+
+<body>
+<h1>hello to our time space</h1>
+
+<h2>welcome</h2>
+<hr>
+<a href="/api/2015-19-11" target="_blank">click here to get the project date</a>
+<hr>
+<a href="/api/1451001600000">click here to get the time of this project</a>
+<hr>
+<h1>Example Output</h1>
+<p>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</p>
+<p>made by <a target="_blank" href="https://www.freecodecamp.org/" >freecodecamp.org</a></p>
+<div id="shape"><div id="shape1"></div>
+<div id="shape2"></div>
+</div>
+<hr>
+<ul><% for(let i=0 ;i<urls.length ;i++){%>
+    <li><a href="<%=urls[i].url%>"><%=urls[i].url%></a><a id='<%=urls[i]._id%>' class="deleted"  data-delet=`${<%=urls[i]._id%>}` >  Delete</a></li>
+<%}%>
+    </ul>
+<hr>
+<form action='/x' method="POST">
+    <filedset>
+        <legend>url shortener</legend>
+    <lable for='url'>
+    </lable>
+    <input id='url' type='text' name="url" >
+    <button type='submit' id="button"  onclick="c()">Post url</button>
+</filedset>
+
+
+</form>
+
+<!-- 1) we encode the data to use it in a standared way on the internet
+2) we encode the data to make a very large file multipart file so we can send the data into the server -->
+<form enctype="multipart/form-data" method="POST" action="/postt">
+    <legend>uploading files</legend>
+<input type="file" name="file">
+<button type="submit" value="upload">upload</button>
+
+</form>
+<form action="/download" method="get">
+    <button type="submit">download</button>
+</form>
+
+<script>
+let x=document.getElementsByClassName("deleted");
+// let element=x[0];
+    console.log(x);
+    for(let i=0;i<x.length;i++){
+console.log('here is me',x[i].dataset.delet);
+    x[i].addEventListener('click',function(){
+        console.log('I am in the function ',x[i].dataset.delet);
+fetch('/'+x[i].dataset.delet,{method:'DELETE'})
+.then(res=> res.json())
+.then(data=>{window.location.href=data.redirect})
+.catch(err=>{console.log(err)})
+    })}
+    
+    </script>
+<!-- <script>
+let x=document.getElementById('variable');
+
+let variable;
+let m=document.getElementById('button');
+console.log(m);
+
+// console.log(x.addEventListener(''),'here is the x');
+// x.addEventListener('click',
+
+
+function c (){
+    console.log('i am the fetch function')
+    fetch('/x',{method:'POST'}).then(res=>{
+      if (res.status===202) 
+      {return res.json();}
+        else{
+            return 'nothing';
+        } 
+        // console.log(res,'we are in the fetch');
+    }).then(response=>{
+variable=response;
+        console.log(response,'i am in the response *****************')})
+    .catch(err=>{console.log(err)})
+
+} 
+// )
+    // console.log(document.getElementById('url').value);
+    // if(x!=='nothing'){
+        x.innerHTML=variable;
+console.log(variable);
+    </script> -->
+</div>
+</body>

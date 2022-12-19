@@ -78,8 +78,11 @@ a{
     color:red;
     pointer-events:stroke;
     text-align:center;
+    
 
-
+}
+.deleted{
+    cursor:pointer;
 }
 p{
     text-align:center;
